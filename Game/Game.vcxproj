@@ -173,15 +173,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\systems\LoggerSystem.cpp" />
+    <ClCompile Include="src\managers\EntityManager.cpp" />
     <ClCompile Include="extern\imgui-sfml\imgui-SFML.cpp" />
     <ClCompile Include="extern\imgui\imgui.cpp" />
     <ClCompile Include="extern\imgui\imgui_demo.cpp" />
     <ClCompile Include="extern\imgui\imgui_draw.cpp" />
     <ClCompile Include="extern\imgui\imgui_tables.cpp" />
     <ClCompile Include="extern\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\managers\SceneManager.cpp" />
+    <ClCompile Include="src\managers\GameManager.cpp" />
+    <ClCompile Include="src\managers\ResourceManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\systems\LoggerSystem.h" />
+    <ClInclude Include="src\managers\EntityManager.h" />
     <ClInclude Include="extern\imgui-sfml\imconfig-SFML.h" />
     <ClInclude Include="extern\imgui-sfml\imgui-SFML.h" />
     <ClInclude Include="extern\imgui-sfml\imgui-SFML_export.h" />
@@ -191,6 +198,12 @@
     <ClInclude Include="extern\imgui\imstb_rectpack.h" />
     <ClInclude Include="extern\imgui\imstb_textedit.h" />
     <ClInclude Include="extern\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\managers\SceneManager.h" />
+    <ClInclude Include="src\managers\GameManager.h" />
+    <ClInclude Include="src\managers\ResourceManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\config\config.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

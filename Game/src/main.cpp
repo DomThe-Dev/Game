@@ -1,17 +1,31 @@
-#include "imgui.h"
-#include "imgui-SFML.h"
-#include "spdlog/spdlog.h"
+#include "managers/GameManager.h"
+#include <iostream>
 
-#include <SFML/Graphics/CircleShape.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/System/Clock.hpp>
-#include <SFML/Window/Event.hpp>
-
+/// <summary>
+/// Entry point of program. Keep it as simple as physically possible. Good in case I need to run tests, lets me isolate
+/// this stuff.
+/// </summary>
+/// <returns>0 for success, 1 for error</returns>
 int main() 
 {
-    sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "ImGui + SFML = <3");
+    try
+    {
+        GameManager game;
+        game.Start();
+    }
+    catch (const std::exception& e) {
+        std::cerr << "[ERROR] " << e.what() << std::endl;
+        return 1;
+    }
+    return 0;
+    /*auto file_logger = spdlog::basic_logger_mt("main_logger", "logs/game.log");
+
+    sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Game");
     window.setFramerateLimit(60);
     ImGui::SFML::Init(window);
+    file_logger->info("Game started!");
+    file_logger->warn("Watch out for enemies!");
+    file_logger->error("Something went wrong!");
     spdlog::info("Welcome to spdlog!");
 
     sf::CircleShape shape(100.f);
@@ -39,5 +53,5 @@ int main()
         window.display();
     }
 
-    ImGui::SFML::Shutdown();
+    ImGui::SFML::Shutdown();*/
 }
