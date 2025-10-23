@@ -36,7 +36,7 @@
     <ClCompile Include="extern\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\managers\ResourceManager.cpp">
+    <ClCompile Include="src\managers\ConfigManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\managers\GameManager.cpp">
@@ -46,9 +46,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\managers\EntityManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\LoggerSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +77,7 @@
     <ClInclude Include="extern\imgui\imstb_truetype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\managers\ResourceManager.h">
+    <ClInclude Include="src\managers\ConfigManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\managers\GameManager.h">
@@ -92,7 +89,7 @@
     <ClInclude Include="src\managers\EntityManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\LoggerSystem.h">
+    <ClInclude Include="src\utils\Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

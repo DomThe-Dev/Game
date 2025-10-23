@@ -2,6 +2,9 @@
   "window": {
     "width": 1280,
     "height": 960,
-    "refresh_rate": 60
-  }
+    "refresh_rate": 60,
+    "vsync": false,
+    "fullscreen": false
+  },
+  "audio": 0.6
 }

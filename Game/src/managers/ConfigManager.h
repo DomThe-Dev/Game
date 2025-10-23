@@ -6,6 +6,6 @@ struct settings
 	
 };
 
-class ResourceManager
+class ConfigManager
 {
 };

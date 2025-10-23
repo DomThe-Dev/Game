@@ -1,4 +1,10 @@
 #include "GameManager.h"
+#include <spdlog/sinks/basic_file_sink.h>
+
+GameManager::GameManager()
+{
+	spdlog::set_default_logger(spdlog::basic_logger_mt("default", "logs/game_log.log"));
+}
 
 void GameManager::Start()
 {

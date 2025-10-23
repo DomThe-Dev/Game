@@ -2,10 +2,8 @@
 * - If including a library in a file, use <>, rather than "". "" only for own headers
 */
 
-
 #include "managers/GameManager.h"
-#include <iostream>
-#include "systems/LoggerSystem.h"
+#include "utils/Common.h"
 
 /// <summary>
 /// Entry point of program. Keep it as simple as physically possible. Good in case I need to run tests, lets me isolate
@@ -14,7 +12,6 @@
 /// <returns>0 for success, 1 for error</returns>
 int main() 
 {
-    LoggerSystem::GetInstance();
     try
     {
         GameManager game;
