@@ -364,3 +364,4 @@ FodyWeavers.xsd
 *.scor
 *.gbl
 *.t0000
+/Game/logs/game.log
