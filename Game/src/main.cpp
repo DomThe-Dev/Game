@@ -22,8 +22,7 @@ int main()
         return 1;
     }
     return 0;
-    /*auto file_logger = spdlog::basic_logger_mt("main_logger", "logs/game.log");
-
+    /*
     sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Game");
     window.setFramerateLimit(60);
     ImGui::SFML::Init(window);
