@@ -12,11 +12,14 @@ GameManager::~GameManager()
 
 void GameManager::Start()
 {
+	
+
 	sf::Clock clock; // Keep track of delta time. Can be declared here as all the game is here.
 
 	m_config_.Load("assets/config/config.json");
 	while (true)
 	{
+		
 		break;
 		// Process Input
 

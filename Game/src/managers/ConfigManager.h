@@ -18,6 +18,7 @@ class ConfigManager
 {
 public:
 	bool Load(const std::string& config_location);
+	bool Save(const std::string& config_location);
 private:
 	WindowConfig window_conf_; // Have the configs stored quickly in a variable
 };
