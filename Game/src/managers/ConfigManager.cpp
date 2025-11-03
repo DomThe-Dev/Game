@@ -27,7 +27,7 @@ bool ConfigManager::Load(const std::string& config_location)
 	}
 	catch (const std::exception& e)
 	{
-		spdlog::error("Could not parse json data into variable. Error: ", e.what());
+		spdlog::error("Could not parse json data into variable. Error: {}", e.what());
 		return false;
 	}
 
@@ -46,16 +46,50 @@ bool ConfigManager::Load(const std::string& config_location)
 	{
 		spdlog::warn("config.json does not contain the window section. Using default struct.");
 	}
+
+	// Store for saving and such.
+	config_path_ = config_location;
 	return true;
 }
 
 /// <summary>
 /// Saves the config stored in the current struct to the config location.
 /// </summary>
-/// <param name="config_location"></param>
-/// <returns></returns>
-bool ConfigManager::Save(const std::string& config_location)
+/// <returns>true if it ran correctly, false otherwise</returns>
+bool ConfigManager::Save()
 {
+	// Check if there is already a config path
+	if (config_path_.empty())
+	{
+		spdlog::error("Config path is empty, not able to save.");
+		return false;
+	}
 
-	return false;
+	// Try to open the file path, if it can't for some reason, then throw an error.
+	std::ofstream file(config_path_);
+	if (!file.is_open())
+	{
+		spdlog::error("Could not open config file to save at {}", config_path_);
+		return false;
+	}
+
+	// Try to put all the data into the file
+	json j;
+	try
+	{
+		auto& window = j["window"];
+		window["fullscreen"] = window_conf_.fullscreen;
+		window["vsync"] = window_conf_.vsync;
+		window["width"] = window_conf_.width;
+		window["heigh"] = window_conf_.height;
+		window["refresh_rate"] = window_conf_.refresh_rate;
+
+		file << j.dump(4);
+		return true;
+	}
+	catch (const std::exception& e)
+	{
+		spdlog::error("Could not store the struct in the config file. Error {}", e.what());
+		return false;
+	}
 }
