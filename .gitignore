@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.scor
+*.gbl
+*.t0000
+/Game/logs/game.log
+/Game/imgui.ini
