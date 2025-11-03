@@ -365,3 +365,4 @@ FodyWeavers.xsd
 *.gbl
 *.t0000
 /Game/logs/game.log
+/Game/imgui.ini

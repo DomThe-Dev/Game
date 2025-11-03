@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/System.hpp>
-#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <imgui.h>
+#include <imgui-SFML.h>
 
 #include "../utils/Common.h"
 #include "ConfigManager.h"
@@ -17,7 +19,7 @@ private:
 	ConfigManager m_config_;
 
 	sf::Clock clock_;
-	sf::Window window_;
+	sf::RenderWindow window_;
 
 	void Update();
 };

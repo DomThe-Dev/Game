@@ -22,39 +22,4 @@ int main()
         return 1;
     }
     return 0;
-    /*
-    sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Game");
-    window.setFramerateLimit(60);
-    ImGui::SFML::Init(window);
-    file_logger->info("Game started!");
-    file_logger->warn("Watch out for enemies!");
-    file_logger->error("Something went wrong!");
-    spdlog::info("Welcome to spdlog!");
-
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    sf::Clock deltaClock;
-    while (window.isOpen()) {
-        while (const auto event = window.pollEvent()) {
-            ImGui::SFML::ProcessEvent(window, *event);
-
-            if (event->is<sf::Event::Closed>()) {
-                window.close();
-            }
-        }
-
-        ImGui::SFML::Update(window, deltaClock.restart());
-
-        ImGui::Begin("Hello, world!");
-        ImGui::Button("Look at this pretty button");
-        ImGui::End();
-
-        window.clear();
-        window.draw(shape);
-        ImGui::SFML::Render(window);
-        window.display();
-    }
-
-    ImGui::SFML::Shutdown();*/
 }

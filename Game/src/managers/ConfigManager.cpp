@@ -1,13 +1,9 @@
 #include "ConfigManager.h"
 
+// Note: file.close() is not needed as the destructor is called when the variable is out of scope. To my current knowledge.
+
 using json = nlohmann::json;
 
-/// <summary>
-/// Loads the config file from a given path, and stores it in
-/// the structs of this class.
-/// </summary>
-/// <param name="config_location"></param>
-/// <returns>true if loaded correctly, otherwise false</returns>
 bool ConfigManager::Load(const std::string& config_location)
 {
 	// Try opening file
@@ -52,10 +48,7 @@ bool ConfigManager::Load(const std::string& config_location)
 	return true;
 }
 
-/// <summary>
-/// Saves the config stored in the current struct to the config location.
-/// </summary>
-/// <returns>true if it ran correctly, false otherwise</returns>
+
 bool ConfigManager::Save()
 {
 	// Check if there is already a config path
@@ -92,4 +85,9 @@ bool ConfigManager::Save()
 		spdlog::error("Could not store the struct in the config file. Error {}", e.what());
 		return false;
 	}
+}
+
+WindowConfig& ConfigManager::GetWindowConfig()
+{
+	return window_conf_;
 }

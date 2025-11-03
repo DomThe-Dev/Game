@@ -1,10 +1,9 @@
 {
-  "window": {
-    "fullscreen": false,
-    "vsync": false,
-    "width": 1280,
-    "height": 720,
-    "refresh_rate": 60
-  },
-  "audio": 0.6
+    "window": {
+        "fullscreen": false,
+        "heigh": 720,
+        "refresh_rate": 60,
+        "vsync": true,
+        "width": 1280
+    }
 }
