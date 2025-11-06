@@ -13,7 +13,7 @@ void DebugWindow::Init(sf::RenderWindow& window)
 	}
 }
 
-void DebugWindow::ProcessEvent(sf::RenderWindow& window, sf::Event event)
+void DebugWindow::ProcessEvent(sf::RenderWindow& window, const sf::Event& event)
 {
 	ImGui::SFML::ProcessEvent(window, event);
 }

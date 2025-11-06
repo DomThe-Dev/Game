@@ -29,7 +29,6 @@ void GameManager::Start()
 
 		while (const std::optional event = window_.pollEvent())
 		{
-			ImGui::SFML::ProcessEvent(window_, *event);
 			dbg_wndw.ProcessEvent(window_, *event);
 			// "close requested" event: we close the window
 			if (event->is<sf::Event::Closed>())
@@ -44,7 +43,7 @@ void GameManager::Start()
 
 		ImGui::Begin("Debug Menu");
 		ImGui::Text("FPS: %.1f", fps);
-		ImGui::Text("Frame Time: %.3f ms", delta_time.asMicroseconds());
+		ImGui::Text("Frame Time: %.3f ms", delta_time.asMicroseconds() / 1000.f);
 		ImGui::Text("Window Size: %dx%d", window_.getSize().x, window_.getSize().y);
 		ImGui::Text("VSync: %s", m_config_.GetWindowConfig().vsync ? "On" : "Off");
 
