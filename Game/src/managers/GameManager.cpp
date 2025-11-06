@@ -15,18 +15,13 @@ void GameManager::Start()
 	sf::Clock clock; // Keep track of delta time. Can be declared here as all the game is here.
 
 	m_config_.Load("assets/config/config.json");
-	//m_config_.Save();
 
 	window_.create(
 		sf::VideoMode({ m_config_.GetWindowConfig().width, m_config_.GetWindowConfig().height }), 
 		"Game"
 	);
 
-	if (!ImGui::SFML::Init(window_))
-	{
-		spdlog::error("Could not initialise SFML ImGui.");
-		return;
-	}
+	dbg_wndw.Init(window_);
 
 	while (window_.isOpen())
 	{
@@ -35,6 +30,7 @@ void GameManager::Start()
 		while (const std::optional event = window_.pollEvent())
 		{
 			ImGui::SFML::ProcessEvent(window_, *event);
+			dbg_wndw.ProcessEvent(window_, *event);
 			// "close requested" event: we close the window
 			if (event->is<sf::Event::Closed>())
 				window_.close();

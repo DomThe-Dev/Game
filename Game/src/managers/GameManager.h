@@ -5,6 +5,7 @@
 #include <imgui-SFML.h>
 
 #include "../utils/Common.h"
+#include "../utils/DebugWindow.h"
 #include "ConfigManager.h"
 #include "SceneManager.h"
 
@@ -20,6 +21,8 @@ private:
 
 	sf::Clock clock_;
 	sf::RenderWindow window_;
+
+	DebugWindow dbg_wndw;
 
 	void Update();
 };
