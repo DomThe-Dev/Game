@@ -1,11 +1,11 @@
 #pragma once
-#include <vector>
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <imgui.h>
 #include <imgui-SFML.h>
 
+#include "QueueLoop.h"
 #include "Common.h"
 
 class DebugWindow
@@ -17,7 +17,12 @@ public:
 	/// <param name="window">Reference to the currently active window.</param>
 	void Init(sf::RenderWindow& window);
 	void ProcessEvent(sf::RenderWindow& window, const sf::Event& event);
+	void Update(float dt);
 private:
-	std::vector<float> fps_history_[60];
+	QueueLoop<float, 100> fps_history_;
+	float fps_low_;
+	float fps_high_;
+
+	float FPSAverage();
 };
 

@@ -173,7 +173,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\utils\Queue.cpp" />
     <ClCompile Include="src\utils\DebugWindow.cpp" />
     <ClCompile Include="src\managers\EntityManager.cpp" />
     <ClCompile Include="extern\imgui-sfml\imgui-SFML.cpp" />
@@ -188,7 +187,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\utils\Queue.h" />
+    <ClInclude Include="src\utils\QueueLoop.h" />
     <ClInclude Include="src\utils\DebugWindow.h" />
     <ClInclude Include="src\managers\EntityManager.h" />
     <ClInclude Include="extern\imgui-sfml\imconfig-SFML.h" />
