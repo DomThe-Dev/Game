@@ -1,6 +1,5 @@
 #include "GameManager.h"
 #include <spdlog/sinks/basic_file_sink.h>
-#include "../utils/Queue.h"
 
 
 GameManager::GameManager()
@@ -16,6 +15,7 @@ void GameManager::Start()
 {
 	sf::Clock clock; // Keep track of delta time. Can be declared here as all the game is here.
 
+	// Load managers
 	m_config_.Load("assets/config/config.json");
 
 	window_.create(
@@ -36,14 +36,13 @@ void GameManager::Start()
 			if (event->is<sf::Event::Closed>())
 				window_.close();
 		}
+
 		// Process Input
 
 		// Update
-		ImGui::SFML::Update(window_, delta_time);
+		dbg_wndw.Update(window_, delta_time);
 
-		float fps = 1.0f / delta_time.asSeconds();
-
-		ImGui::Begin("Debug Menu");
+		/*ImGui::Begin("Debug Menu");
 		ImGui::Text("FPS: %.1f", fps);
 		ImGui::Text("Frame Time: %.3f ms", delta_time.asMicroseconds() / 1000.f);
 		ImGui::Text("Window Size: %dx%d", window_.getSize().x, window_.getSize().y);
@@ -62,14 +61,14 @@ void GameManager::Start()
 			spdlog::info("Configuration saved");
 		}
 
-		ImGui::End();
+		ImGui::End();*/
 
 		// Render
 		window_.clear(sf::Color::Black);
-		ImGui::SFML::Render(window_);
+		dbg_wndw.Render(window_);
 		window_.display();
 	}
-	ImGui::SFML::Shutdown(); // Clean up
+	dbg_wndw.Shutdown();
 }
 
 void GameManager::Update()

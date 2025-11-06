@@ -17,11 +17,15 @@ public:
 	/// <param name="window">Reference to the currently active window.</param>
 	void Init(sf::RenderWindow& window);
 	void ProcessEvent(sf::RenderWindow& window, const sf::Event& event);
-	void Update(float dt);
+	void Update(sf::RenderWindow& window, sf::Time& delta_time);
+	void Shutdown();
+	void Render(sf::RenderWindow& window_);
 private:
 	QueueLoop<float, 100> fps_history_;
-	float fps_low_;
-	float fps_high_;
+	float current_average_ = 0.f;
+	float total_time_ = 0.f;
+	float fps_low_ = 0.f;
+	float fps_high_ = 0.f;
 
 	float FPSAverage();
 };
