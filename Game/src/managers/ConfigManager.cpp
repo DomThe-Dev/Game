@@ -74,7 +74,7 @@ bool ConfigManager::Save()
 		window["fullscreen"] = window_conf_.fullscreen;
 		window["vsync"] = window_conf_.vsync;
 		window["width"] = window_conf_.width;
-		window["heigh"] = window_conf_.height;
+		window["height"] = window_conf_.height;
 		window["refresh_rate"] = window_conf_.refresh_rate;
 
 		file << j.dump(4);
