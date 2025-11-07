@@ -1,32 +1,45 @@
 #pragma once
+#include <vector>
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <imgui.h>
 #include <imgui-SFML.h>
 
-#include "QueueLoop.h"
 #include "Common.h"
 
 class DebugWindow
 {
 public:
 	/// <summary>
-	/// Initialises the SFML ImGUI with the current window passed in as reference.
+	/// Initialise the debug window system.
 	/// </summary>
-	/// <param name="window">Reference to the currently active window.</param>
+	/// <param name="window">Reference to the active window.</param>
 	void Init(sf::RenderWindow& window);
-	void ProcessEvent(sf::RenderWindow& window, const sf::Event& event);
-	void Update(sf::RenderWindow& window, sf::Time& delta_time);
+	/// <summary>
+	/// Close the debug window system.
+	/// </summary>
 	void Shutdown();
+
+	/// <summary>
+	/// Update ImGui to process all the events, like clicking the buttons.
+	/// </summary>
+	/// <param name="window">Reference to the active window</param>
+	/// <param name="event">Reference to an event that has happened</param>
+	void ProcessEvent(sf::RenderWindow& window, const sf::Event& event);
+	/// <summary>
+	/// Call once per frame. Makes everything in the GUI and displays the values. Also updates values.
+	/// </summary>
+	/// <param name="window">Reference to active window</param>
+	/// <param name="delta_time">Time value from the GameMaster</param>
+	void Update(sf::RenderWindow& window, sf::Time delta_time);
 	void Render(sf::RenderWindow& window_);
 private:
-	QueueLoop<float, 100> fps_history_;
-	float current_average_ = 0.f;
-	float total_time_ = 0.f;
-	float fps_low_ = 0.f;
-	float fps_high_ = 0.f;
+	float second_timer_ = 0.f; // The time unit timer, so some stuff can get updated every second.
 
-	float FPSAverage();
+	// FPS Tracking
+	static constexpr size_t FPS_HISTORY_SIZE_ = 64; // Must be a power of 2 for performance. Constexpr to make it a compile time constant, making it faster
+	std::vector<float> fps_history_[FPS_HISTORY_SIZE_];
+
 };
 

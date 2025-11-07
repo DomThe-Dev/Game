@@ -40,28 +40,6 @@ void GameManager::Start()
 		// Process Input
 
 		// Update
-		dbg_wndw.Update(window_, delta_time);
-
-		/*ImGui::Begin("Debug Menu");
-		ImGui::Text("FPS: %.1f", fps);
-		ImGui::Text("Frame Time: %.3f ms", delta_time.asMicroseconds() / 1000.f);
-		ImGui::Text("Window Size: %dx%d", window_.getSize().x, window_.getSize().y);
-		ImGui::Text("VSync: %s", m_config_.GetWindowConfig().vsync ? "On" : "Off");
-
-		bool vsync = m_config_.GetWindowConfig().vsync;
-		if (ImGui::Checkbox("VSync", &vsync))
-		{
-			m_config_.GetWindowConfig().vsync = vsync;
-			window_.setVerticalSyncEnabled(vsync);
-		}
-
-		if (ImGui::Button("Save Config"))
-		{
-			m_config_.Save();
-			spdlog::info("Configuration saved");
-		}
-
-		ImGui::End();*/
 
 		// Render
 		window_.clear(sf::Color::Black);
