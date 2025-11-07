@@ -51,4 +51,5 @@ void GameManager::Start()
 
 void GameManager::Update()
 {
+
 }
