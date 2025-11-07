@@ -21,6 +21,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+
+    - name: Create docs directory
+      run: mkdir -p docs
         
     - name: Doxygen Action
       uses: mattnotmitt/doxygen-action@v1.1.0
@@ -37,3 +40,5 @@ jobs:
         # Default Doxyfile build documentation to html directory. 
         # Change the directory if changes in Doxyfile
         publish_dir: ./docs/html
+        user_name: github-actions
+        user_email: github-actions@github.com
