@@ -38,7 +38,7 @@ void GameManager::Start()
 		}
 
 		// Process Input
-
+		dbg_wndw.Update(window_, delta_time);
 		// Update
 
 		// Render
