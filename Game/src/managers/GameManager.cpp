@@ -1,6 +1,6 @@
 #include "GameManager.h"
 #include <spdlog/sinks/basic_file_sink.h>
-#include "../utils/Queue.h"
+#include "../utils/QueueLoop.h"
 
 
 GameManager::GameManager()
@@ -74,4 +74,5 @@ void GameManager::Start()
 
 void GameManager::Update()
 {
+
 }
