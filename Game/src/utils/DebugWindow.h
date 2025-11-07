@@ -7,6 +7,7 @@
 #include <imgui-SFML.h>
 
 #include "Common.h"
+#include "FPSTracker.h"
 
 class DebugWindow
 {
@@ -39,13 +40,7 @@ public:
 	/// <param name="window_">Reference to the active window</param>
 	void Render(sf::RenderWindow& window_);
 private:
-	float second_timer_ = 0.f; // The time unit timer, so some stuff can get updated every second.
-
-	// FPS Tracking
-	static constexpr size_t FPS_HISTORY_SIZE_ = 64; // Must be a power of 2 for performance. Constexpr to make it a compile time constant, making it faster
-	std::vector<float> fps_history_ = {};
-
-	void AddFpsSample(float sample);
-	float GetAverageFps() const;
+	float elapsed_time_ = 0.f;
+	FPSTracker fps_tracker_;
 };
 

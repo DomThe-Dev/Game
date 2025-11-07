@@ -5,7 +5,6 @@ void DebugWindow::Init(sf::RenderWindow& window)
 	if (ImGui::SFML::Init(window))
 	{
 		spdlog::info("Initialised SFML ImGUI SFML.");
-		fps_history_.reserve(FPS_HISTORY_SIZE_); // Reserve space for FPS history
 	}
 	else 
 	{
@@ -26,58 +25,29 @@ void DebugWindow::Shutdown()
 
 void DebugWindow::Update(sf::RenderWindow& window, sf::Time delta_time)
 {
+	elapsed_time_ += delta_time.asSeconds();
+
 	ImGui::SFML::Update(window, delta_time);
-	float current_fps = 1.f / delta_time.asSeconds();
-	AddFpsSample(current_fps);
+	fps_tracker_.Update(delta_time);
 
-	ImGui::Begin("Debug Window");
-	ImGui::Text("FPS: %.1f", GetAverageFps());
-	ImGui::Text("Frame Time: %.3f ms", delta_time.asMilliseconds());
-
-	// FPS Graph
-	if (!fps_history_.empty())
+	if (elapsed_time_ >= 1.f) // Runs every second
 	{
-		ImGui::PlotLines("FPS History",
-			fps_history_.data(),
-			fps_history_.size(),
-			0,
-			nullptr,
-			0.0f,
-			5000.0f,
-			ImVec2(0, 80));
+		fps_tracker_.UpdateStats(delta_time);
+		elapsed_time_ = 0.f;
 	}
-
-	ImGui::Separator();
-	ImGui::Text("Window Size: %dx%d", window.getSize().x, window.getSize().y);
-
-	ImGui::End();
-
 }
 
 void DebugWindow::Render(sf::RenderWindow& window_)
 {
-
+	ImGui::Begin("Debug Window");
+	ImGui::Text("FPS: %.1f", fps_tracker_.GetAverageFps());
+	ImGui::Text("Lows: %.1f", fps_tracker_.GetLowsFps());
+	ImGui::Text("Highs: %.1f", fps_tracker_.GetHighsFps());
+	ImGui::Text("Frame Time: %.3f ms", fps_tracker_.GetFrameTimeMs());
+	ImGui::Separator();
+	ImGui::Text("Window Size: %dx%d", window_.getSize().x, window_.getSize().y);
+	ImGui::End();
 
 	// Render to the screen
 	ImGui::SFML::Render(window_);
-}
-
-void DebugWindow::AddFpsSample(float sample)
-{
-	fps_history_.push_back(sample);
-	if (fps_history_.size() >= FPS_HISTORY_SIZE_)
-		fps_history_.erase(fps_history_.begin()); // Shifts everything over, so oldest element is removed
-}
-
-float DebugWindow::GetAverageFps() const
-{
-	if (fps_history_.size() <= 0)
-		return 0.0f;
-
-	float sum = 0.f;
-	for (auto& i : fps_history_)
-	{
-		sum += i;
-	}
-	return sum / fps_history_.size();
 }
