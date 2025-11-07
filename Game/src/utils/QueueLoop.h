@@ -4,7 +4,7 @@ template <typename T, size_t size>
 class QueueLoop
 {
 public:
-	Queue()
+	QueueLoop()
 	{
 		for (size_t i = 0; i < size; i++)
 		{

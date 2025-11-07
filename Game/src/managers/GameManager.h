@@ -21,6 +21,7 @@ private:
 
 	sf::Clock clock_;
 	sf::RenderWindow window_;
+	SceneManager scene_manager_;
 
 	DebugWindow dbg_wndw;
 
