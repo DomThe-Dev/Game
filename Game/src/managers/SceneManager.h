@@ -2,7 +2,7 @@
 #include <memory>
 #include <unordered_map>
 #include <stack>
-#include "../../Scene.h"
+#include "../core/Scene.h"
 
 enum GameState // 
 {

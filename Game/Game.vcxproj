@@ -173,7 +173,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="src\core\Scene.cpp" />
     <ClCompile Include="src\utils\FPSTracker.cpp" />
     <ClCompile Include="src\utils\DebugWindow.cpp" />
     <ClCompile Include="src\managers\EntityManager.cpp" />
@@ -189,9 +189,8 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene.h" />
+    <ClInclude Include="src\core\Scene.h" />
     <ClInclude Include="src\utils\FPSTracker.h" />
-    <ClInclude Include="src\utils\QueueLoop.h" />
     <ClInclude Include="src\utils\DebugWindow.h" />
     <ClInclude Include="src\managers\EntityManager.h" />
     <ClInclude Include="extern\imgui-sfml\imconfig-SFML.h" />
