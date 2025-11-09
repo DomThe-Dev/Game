@@ -25,6 +25,8 @@ void GameManager::Start()
 
 	dbg_wndw.Init(window_);
 
+	scene_manager_.Init("assets/scenes");
+
 	while (window_.isOpen())
 	{
 		sf::Time delta_time = clock.restart();

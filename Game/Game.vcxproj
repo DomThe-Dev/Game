@@ -173,7 +173,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="src\core\Scene.cpp" />
+    <ClCompile Include="src\core\SceneFactory.cpp" />
     <ClCompile Include="src\utils\DebugWindow.cpp" />
     <ClCompile Include="src\managers\EntityManager.cpp" />
     <ClCompile Include="extern\imgui-sfml\imgui-SFML.cpp" />
@@ -188,7 +189,9 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneFactory.h" />
+    <ClInclude Include="src\core\Scene.h" />
+    <ClInclude Include="src\core\SceneTypes.h" />
     <ClInclude Include="src\utils\QueueLoop.h" />
     <ClInclude Include="src\utils\DebugWindow.h" />
     <ClInclude Include="src\managers\EntityManager.h" />
@@ -208,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\config\config.json" />
+    <None Include="assets\scenes\scene_1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

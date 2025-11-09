@@ -1,27 +1,67 @@
 #include "SceneManager.h"
-void SceneManager::AddScene(GameState state, std::shared_ptr<Scene> scene)
+void SceneManager::Init(const std::string& scene_folder) 
 {
-	scenes_[state].push_back(scene); // Add scene to the vector for the given state
-}
-void SceneManager::ChangeScene(GameState new_state, size_t scene_index)
-{
-	auto it = scenes_.find(new_state); // Find scenes for the new state
-	if(it == scenes_.end() || it->second.empty())  
+	namespace fs = std::filesystem;
+
+	for (auto& file : fs::directory_iterator(scene_folder)) // iterate through all files in the scene folder
 	{
-		return; // No scenes for this state
+		if(file.path().extension() == ".json") 
+		{
+			try
+			{
+				std::ifstream in(file.path());
+				nlohmann::json scene_json;
+				in >> scene_json;
+
+				SceneData data;
+				data.id_ = scene_json["scene_info"]["id"];
+				data.display_name_ = scene_json["scene_info"]["display_name"];
+				data.state_ = static_cast<GameState>(scene_json["scene_info"]["state"]);
+
+				std::shared_ptr<Scene> scene = SceneFactory::CreateScene(data, scene_json);
+
+				AddScene(data.id_, scene);
+			}
+			catch(const std::exception& e) 
+			{
+				throw std::runtime_error("Failed to load scene from " + file.path().string() + ": " + e.what());
+			}
+		}
 	}
-	if(scene_index >= it->second.size())
+	if(!scenes_.empty()) 
 	{
-		scene_index = 0; // Default to first scene if index out of bounds
+		ChangeScene(scenes_.begin()->first);
+	}
+}
+void SceneManager::AddScene(int id, std::shared_ptr<Scene> scene)
+{
+	if(scenes_.find(id) != scenes_.end())
+	{
+		return; // Scene with this ID already exists
+	}
+	scenes_[id] = scene;
+}
+void SceneManager::ChangeScene(int id)
+{
+	auto it = scenes_.find(id);
+	if (it == scenes_.end()) 
+	{
+		return; // Scene not found
 	}
 
-	if(current_scene_.scene_)
+	if(current_scene_.scene_) 
 	{
-		current_scene_.scene_->Exit(); // Exit current scene
+		current_scene_.scene_->Exit();
 	}
-	current_scene_.state_ = new_state; 
-	current_scene_.scene_ = it->second[scene_index]; // Set new current scene
-	current_scene_.scene_->Enter(); // Enter new scene
+
+	current_scene_.scene_id_ = id;
+	current_scene_.scene_ = it->second;
+	if(!current_scene_.scene_) 
+	{
+		return;
+	}
+	current_scene_.scene_name_ = current_scene_.scene_->GetName(); // Add to scene class
+	current_scene_.scene_->Enter();
 }
 
 void SceneManager::PushScene(std::shared_ptr<Scene> scene)
