@@ -16,24 +16,23 @@
 /// <summary>
 /// Loads and returns the assets from file paths, and stores them in a map. Singleton.
 /// </summary>
+template<typename Resource>
 class ResourceManager
 {
 public:
-	static ResourceManager& GetInstance();
+	static ResourceManager& GetInstance()
+	{
+		static ResourceManager instance;
+		return instance;
+	}
 
-	/// <summary>
-	/// Load will first try to get the asset by ID, returning the asset if it exists.
-	/// If it does not exist, it will load the asset from the file path, and store it in a map.
-	/// </summary>
-	/// <param name="id"></param>
-	/// <param name="file_path"></param>
-	/// <returns></returns>
-	std::shared_ptr<Resource> Load(std::string id, std::string file_path);
-	std::shared_ptr<Resource> Get(std::string id); // Gets a certain asset by ID
 private:
-	std::unordered_map<std::string, std::shared_ptr<Resource>> resources_; // Map of resources by ID
+	// Singleton class.
+	ResourceManager() = default; // Private constructor.
+	ResourceManager(const ResourceManager&) = delete; // Delete copy constructor.
+	ResourceManager& operator=(const ResourceManager&) = delete; // Delete assignment operator.
+	ResourceManager(ResourceManager&&) = delete; // Delete move constructor.
+	ResourceManager& operator=(ResourceManager&&) = delete; // Delete move assignment operator.
 
-	ResourceManager(); // Private constructor for singleton pattern
-	ResourceManager(ResourceManager const&); // Stop copies
-	ResourceManager operator=(ResourceManager const&); // Stop copies
+	
 };
