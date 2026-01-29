@@ -1,9 +1,7 @@
 #pragma once
 #include <string>
 #include <unordered_map>
-#include <memory>
-
-#include "../core/Resource.h"
+//#include <memory>
 
 /*
 * Create a singleton resource manager class
