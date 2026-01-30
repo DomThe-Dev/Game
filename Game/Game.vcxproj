@@ -173,7 +173,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ResourceHolder.cpp" />
     <ClCompile Include="src\managers\ResourceManager.cpp" />
     <ClCompile Include="src\factories\SceneFactory.cpp" />
     <ClCompile Include="src\core\Scene.cpp" />
@@ -192,7 +191,6 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\ResourceHolder.h" />
     <ClInclude Include="src\managers\ResourceManager.h" />
     <ClInclude Include="src\factories\SceneFactory.h" />
     <ClInclude Include="src\core\Scene.h" />
