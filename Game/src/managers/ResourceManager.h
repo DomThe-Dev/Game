@@ -11,6 +11,9 @@
 * Could remove singleton and reuse the class:
 *	Core resources for the menu, menu font, etc
 *	Scene resources for the scene coming up, meaning that everything will be deleted when the scene is gone
+* 
+* For the time being, audio is not being handled, as there is more to look into for sounds, music, sound buffers, etc.
+* + Priority task
 */
 
 /// <summary>
@@ -34,14 +37,9 @@ public:
 	const sf::Texture* GetTexture(const std::string& id) const;
 	void UnloadTexture(const std::string& id);
 
-	// Audio
-	void LoadAudio(const std::string& id, const std::string& file_path);
-	const sf::AudioResource& GetAudio(const std::string& id) const;
-	void UnloadAudio(const std::string& id);
-
 	// Font
 	void LoadFont(const std::string& id, const std::string& file_path);
-	const sf::Font GetFont(const std::string& id) const;
+	const sf::Font* GetFont(const std::string& id) const;
 	void UnloadFont(const std::string& id);
 	
 	// Cleanup
@@ -57,6 +55,5 @@ private:
 
 	// Maps of the resources
 	std::unordered_map<std::string, sf::Texture> textures_;
-	std::unordered_map<std::string, sf::AudioResource> audios_;
 	std::unordered_map<std::string, sf::Font> fonts_;
 };

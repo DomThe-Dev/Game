@@ -23,9 +23,6 @@ void ResourceManager::LoadTexture(const std::string& id, const std::string& file
 
 const sf::Texture* ResourceManager::GetTexture(const std::string& id) const
 {
-	// Using the std::optional thing because maybe the reference doesn't exist, and something needs to be handed back.
-	// This does mean that 
-
 	auto it = textures_.find(id);
 
 	// If can't find the texture
@@ -49,4 +46,61 @@ void ResourceManager::UnloadTexture(const std::string& id)
 		return;
 	}
 	textures_.erase(it);
+}
+
+void ResourceManager::LoadFont(const std::string& id, const std::string& file_path)
+{
+	// If font ID is already in use
+	if (fonts_.find(id) != fonts_.end())
+	{
+		spdlog::error("Font ID: {} is already in use.", id);
+		return;
+	}
+
+	sf::Font font;
+	// If cannot load the file
+	if (!font.openFromFile(file_path))
+	{
+		spdlog::error("Could not load font with ID: {}, at file location: {}.", id, file_path);
+		return;
+	}
+
+	// No errors, so continue
+	fonts_[id] = std::move(font);
+}
+
+const sf::Font* ResourceManager::GetFont(const std::string& id) const
+{
+	auto it = fonts_.find(id);
+
+	// If can't find the font
+	if (it == fonts_.end())
+	{
+		spdlog::error("Cannot find the font with ID: {}", id);
+		return nullptr; // Return with an error font maybe?
+	}
+
+	// Has found it
+	return &it->second;
+}
+
+void ResourceManager::UnloadFont(const std::string& id)
+{
+	auto it = fonts_.find(id);
+
+	if (it == fonts_.end())
+	{
+		spdlog::warn("Could not unload font with ID: {}", id); // No harm no foul?
+		return;
+	}
+	fonts_.erase(it);
+}
+
+void ResourceManager::UnloadAll()
+{
+	spdlog::info("Clearing Textures map, size: {}", textures_.size());
+	textures_.clear();
+
+	spdlog::info("Clearing Fonts map, size: {}", fonts_.size());
+	fonts_.clear();
 }
