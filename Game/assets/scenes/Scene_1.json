@@ -1,7 +1,8 @@
 {
   "scene_info": {
     "id": 1,
-    "display_name": "Test Field"
+    "display_name": "Test Field",
+    "state": 0
   },
   "map": {
     "grid_size": [ 16, 9 ],

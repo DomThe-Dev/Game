@@ -191,6 +191,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\SceneTypes.h" />
     <ClInclude Include="src\managers\ResourceManager.h" />
     <ClInclude Include="src\factories\SceneFactory.h" />
     <ClInclude Include="src\core\Scene.h" />

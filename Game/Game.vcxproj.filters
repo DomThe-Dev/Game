@@ -63,9 +63,6 @@
     <ClCompile Include="src\utils\FPSTracker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\ResourceHolder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="extern\imgui-sfml\imconfig-SFML.h">
@@ -125,7 +122,7 @@
     <ClInclude Include="src\utils\FPSTracker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ResourceHolder.h">
+    <ClInclude Include="src\core\SceneTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
