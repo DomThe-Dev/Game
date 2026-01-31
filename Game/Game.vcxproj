@@ -173,6 +173,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\managers\ResourceManager.cpp" />
+    <ClCompile Include="src\factories\SceneFactory.cpp" />
+    <ClCompile Include="src\core\Scene.cpp" />
+    <ClCompile Include="src\utils\FPSTracker.cpp" />
+    <ClCompile Include="src\utils\DebugWindow.cpp" />
     <ClCompile Include="src\managers\EntityManager.cpp" />
     <ClCompile Include="extern\imgui-sfml\imgui-SFML.cpp" />
     <ClCompile Include="extern\imgui\imgui.cpp" />
@@ -186,6 +191,11 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\managers\ResourceManager.h" />
+    <ClInclude Include="src\factories\SceneFactory.h" />
+    <ClInclude Include="src\core\Scene.h" />
+    <ClInclude Include="src\utils\FPSTracker.h" />
+    <ClInclude Include="src\utils\DebugWindow.h" />
     <ClInclude Include="src\managers\EntityManager.h" />
     <ClInclude Include="extern\imgui-sfml\imconfig-SFML.h" />
     <ClInclude Include="extern\imgui-sfml\imgui-SFML.h" />
@@ -203,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\config\config.json" />
+    <None Include="assets\scenes\Scene_1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

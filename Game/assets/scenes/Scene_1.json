@@ -1,0 +1,48 @@
+{
+  "scene_info": {
+    "id": 1,
+    "display_name": "Test Field"
+  },
+  "map": {
+    "grid_size": [ 16, 9 ],
+    "tile_size": 64,
+    "tileset": "assets/textures/backgrounds/level_1.png",
+    "ground_data": [ 0, 1 ],
+    "foreground_data": [ 0, 1 ],
+    "collision_data": [ 0, 1 ]
+  },
+  "waves": [
+    {
+      "wave_id": 1,
+      "spawn_delay": 1.0,
+      "enemies": [
+        {
+          "type": "slime",
+          "count": 10,
+          "spawn_interval": 0.5
+        },
+        {
+          "type": "goblin",
+          "count": 10,
+          "spawn_interval": 0.5
+        }
+      ]
+    },
+    {
+      "wave_id": 2,
+      "spawn_delay": 1.0,
+      "enemies": [
+        {
+          "type": "slime",
+          "count": 10,
+          "spawn_interval": 0.5
+        },
+        {
+          "type": "goblin",
+          "count": 10,
+          "spawn_interval": 0.5
+        }
+      ]
+    }
+  ]
+}

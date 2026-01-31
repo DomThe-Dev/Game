@@ -366,3 +366,4 @@ FodyWeavers.xsd
 *.t0000
 /Game/logs/game.log
 /Game/imgui.ini
+docs/*
