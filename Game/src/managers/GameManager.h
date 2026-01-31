@@ -7,6 +7,7 @@
 #include "../utils/Common.h"
 #include "../utils/DebugWindow.h"
 #include "ConfigManager.h"
+#include "ResourceManager.h"
 #include "SceneManager.h"
 
 class GameManager
