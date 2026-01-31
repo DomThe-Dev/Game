@@ -6,8 +6,10 @@ var NAVTREEINDEX0 =
 "EntityManager_8h_source.html":[1,0,0,0,2,1],
 "FPSTracker_8h_source.html":[1,0,0,0,3,2],
 "GameManager_8h_source.html":[1,0,0,0,2,2],
+"ResourceManager_8h_source.html":[1,0,0,0,2,3],
 "SceneFactory_8h_source.html":[1,0,0,0,1,0],
-"SceneManager_8h_source.html":[1,0,0,0,2,3],
+"SceneManager_8h_source.html":[1,0,0,0,2,4],
+"SceneTypes_8h_source.html":[1,0,0,0,0,1],
 "Scene_8h_source.html":[1,0,0,0,0,0],
 "annotated.html":[0,0],
 "classConfigManager.html":[0,0,1],
@@ -29,8 +31,10 @@ var NAVTREEINDEX0 =
 "classFPSTracker.html#af04466f8913e08cb866d9d60443470f9":[0,0,4,4],
 "classFPSTracker.html#af8839a6de129f8392c0e5bd8db406c1a":[0,0,4,5],
 "classGameManager.html":[0,0,5],
-"classScene.html":[0,0,6],
-"classSceneManager.html":[0,0,7],
+"classResourceManager.html":[0,0,6],
+"classScene.html":[0,0,7],
+"classSceneFactory.html":[0,0,9],
+"classSceneManager.html":[0,0,10],
 "classes.html":[0,1],
 "dir_55d79b6bb6407fb2999c383948c6f4d1.html":[1,0,0,0,3],
 "dir_6a129d3ff78a08b60082d0e678cdd5ff.html":[1,0,0,0,1],
@@ -44,5 +48,6 @@ var NAVTREEINDEX0 =
 "index.html":[],
 "pages.html":[],
 "structActiveScene.html":[0,0,0],
-"structWindowConfig.html":[0,0,8]
+"structSceneData.html":[0,0,8],
+"structWindowConfig.html":[0,0,11]
 };

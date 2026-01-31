@@ -105,22 +105,21 @@ $(function(){initNavTree('classSceneManager.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3edc15f1fbf480b122773f2b4ac52fa1" id="r_a3edc15f1fbf480b122773f2b4ac52fa1"><td class="memItemLeft" align="right" valign="top"><a id="a3edc15f1fbf480b122773f2b4ac52fa1" name="a3edc15f1fbf480b122773f2b4ac52fa1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddScene</b> (GameState state, std::shared_ptr&lt; <a class="el" href="classScene.html">Scene</a> &gt; scene)</td></tr>
-<tr class="separator:a3edc15f1fbf480b122773f2b4ac52fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1ffb090b066154c6b69838c1b9e9693" id="r_aa1ffb090b066154c6b69838c1b9e9693"><td class="memItemLeft" align="right" valign="top"><a id="aa1ffb090b066154c6b69838c1b9e9693" name="aa1ffb090b066154c6b69838c1b9e9693"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ChangeScene</b> (GameState new_state, size_t scene_index)</td></tr>
-<tr class="separator:aa1ffb090b066154c6b69838c1b9e9693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0158641f56853817cef3a2bc55a611bc" id="r_a0158641f56853817cef3a2bc55a611bc"><td class="memItemLeft" align="right" valign="top"><a id="a0158641f56853817cef3a2bc55a611bc" name="a0158641f56853817cef3a2bc55a611bc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (const std::string &amp;scene_folder)</td></tr>
+<tr class="separator:a0158641f56853817cef3a2bc55a611bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537c5ac20322aa8ef679d3c968724e49" id="r_a537c5ac20322aa8ef679d3c968724e49"><td class="memItemLeft" align="right" valign="top"><a id="a537c5ac20322aa8ef679d3c968724e49" name="a537c5ac20322aa8ef679d3c968724e49"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AddScene</b> (int id, std::shared_ptr&lt; <a class="el" href="classScene.html">Scene</a> &gt; scene)</td></tr>
+<tr class="separator:a537c5ac20322aa8ef679d3c968724e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1fdfaa8671bcbb940d64c7b40c7537" id="r_a0e1fdfaa8671bcbb940d64c7b40c7537"><td class="memItemLeft" align="right" valign="top"><a id="a0e1fdfaa8671bcbb940d64c7b40c7537" name="a0e1fdfaa8671bcbb940d64c7b40c7537"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ChangeScene</b> (int id)</td></tr>
+<tr class="separator:a0e1fdfaa8671bcbb940d64c7b40c7537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add8cdade85bd2e1034e5732f02e41746" id="r_add8cdade85bd2e1034e5732f02e41746"><td class="memItemLeft" align="right" valign="top"><a id="add8cdade85bd2e1034e5732f02e41746" name="add8cdade85bd2e1034e5732f02e41746"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PushScene</b> (std::shared_ptr&lt; <a class="el" href="classScene.html">Scene</a> &gt; scene)</td></tr>
 <tr class="separator:add8cdade85bd2e1034e5732f02e41746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a3440850e459813d5d05fd85f2344b2" id="r_a5a3440850e459813d5d05fd85f2344b2"><td class="memItemLeft" align="right" valign="top"><a id="a5a3440850e459813d5d05fd85f2344b2" name="a5a3440850e459813d5d05fd85f2344b2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PopScene</b> ()</td></tr>
 <tr class="separator:a5a3440850e459813d5d05fd85f2344b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97a596df16dcb52497250809e47726f8" id="r_a97a596df16dcb52497250809e47726f8"><td class="memTemplParams" colspan="2"><a id="a97a596df16dcb52497250809e47726f8" name="a97a596df16dcb52497250809e47726f8"></a>
-template&lt;typename Func&gt; </td></tr>
-<tr class="memitem:a97a596df16dcb52497250809e47726f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ForActiveScene</b> (Func func)</td></tr>
-<tr class="separator:a97a596df16dcb52497250809e47726f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bce7619ea48e4785a1613af58f61a75" id="r_a2bce7619ea48e4785a1613af58f61a75"><td class="memItemLeft" align="right" valign="top"><a id="a2bce7619ea48e4785a1613af58f61a75" name="a2bce7619ea48e4785a1613af58f61a75"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleInput</b> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="separator:a2bce7619ea48e4785a1613af58f61a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,9 +129,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (float del
 <tr class="memitem:a1985f5da09a1d69b501c277060a16fe4" id="r_a1985f5da09a1d69b501c277060a16fe4"><td class="memItemLeft" align="right" valign="top"><a id="a1985f5da09a1d69b501c277060a16fe4" name="a1985f5da09a1d69b501c277060a16fe4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="separator:a1985f5da09a1d69b501c277060a16fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a596df16dcb52497250809e47726f8" id="r_a97a596df16dcb52497250809e47726f8"><td class="memTemplParams" colspan="2"><a id="a97a596df16dcb52497250809e47726f8" name="a97a596df16dcb52497250809e47726f8"></a>
+template&lt;typename Func&gt; </td></tr>
+<tr class="memitem:a97a596df16dcb52497250809e47726f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ForActiveScene</b> (Func func)</td></tr>
+<tr class="separator:a97a596df16dcb52497250809e47726f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1712e624f4355d863b6f46169397a0f" id="r_aa1712e624f4355d863b6f46169397a0f"><td class="memItemLeft" align="right" valign="top"><a id="aa1712e624f4355d863b6f46169397a0f" name="aa1712e624f4355d863b6f46169397a0f"></a>
 GameState&#160;</td><td class="memItemRight" valign="bottom"><b>GetActiveGameState</b> () const</td></tr>
 <tr class="separator:aa1712e624f4355d863b6f46169397a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac448ec0f41dc73f43aed392a191def27" id="r_ac448ec0f41dc73f43aed392a191def27"><td class="memItemLeft" align="right" valign="top"><a id="ac448ec0f41dc73f43aed392a191def27" name="ac448ec0f41dc73f43aed392a191def27"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>GetActiveSceneID</b> () const</td></tr>
+<tr class="separator:ac448ec0f41dc73f43aed392a191def27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0598838c196bb7b10a109edbaba09f0" id="r_ae0598838c196bb7b10a109edbaba09f0"><td class="memItemLeft" align="right" valign="top"><a id="ae0598838c196bb7b10a109edbaba09f0" name="ae0598838c196bb7b10a109edbaba09f0"></a>
+const std::unordered_map&lt; int, std::shared_ptr&lt; <a class="el" href="classScene.html">Scene</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetScenes</b> () const</td></tr>
+<tr class="separator:ae0598838c196bb7b10a109edbaba09f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Game/src/managers/<a class="el" href="SceneManager_8h_source.html">SceneManager.h</a></li>
